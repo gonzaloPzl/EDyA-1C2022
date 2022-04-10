@@ -1,3 +1,3 @@
-# EDyA-1C2022
+# Tarea 1: Hacer un programa
 
-Las diferentes actividades estaran enlistadas en las ramas con sus respectivos nombres
+Escriba un método estático que tome un año como parámetro y devuelva false si el año es bisiesto y true en caso contrario.
