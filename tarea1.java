@@ -23,6 +23,6 @@ public class tarea1 {
 
     System.out.println(noEsBisiesto(anio)); // mostramos por pantalla el retorno
     // generado por la ejecución de la función noEsBisiesto
-
+ 
   }
 }
