@@ -1,9 +1,9 @@
 # EDyA-1C2022
 
-### 1.16 Escriba dos métodos estáticos. El primero debe devolver el máximo de cuatro enteros y el segundo debe devolver el máximo d cinco enteros.
+### 2.7 El bloque finally introduce complicaciones en la especificación del lenguaje Java. Escriba un programa para determinar qué valor es devuelto por foo y que excepción es generada por bar en la Figura 2.21.
 ---
-### 1.18 Escriba una instrucción while que sea equivalente al siguiente fragmento for. ¿Para que podría resultar esto útil?
+### 2.8 Si x e y tienen los valores 3 y 1, respectivamente, ¿Cuál será la salida del siguiente fragmento de código?
 ```java
-for ( ; ; )
-	instrucción
+System.out.println( x + ' ' + y );
+System.put.println( x + " " + y );
 ```
