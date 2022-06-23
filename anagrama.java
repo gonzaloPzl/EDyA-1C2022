@@ -53,6 +53,17 @@ class anagrama {
     }
     return arregloAscii;
   }
+  
+  // Método para transformar los strings a arreglo de int
+  public static int[][] arregloStringToAscii(String[] arreglo) {
+    // creamos un array bidimensional que contendrá los códigos ascii ordenables
+    int[][] arregloDeArreglosInt = new int[arreglo.length][];
+    for (int i = 0; i < arreglo.length; i++){
+      int arregloAscii[] = stringToAscii(arreglo[i]);
+      arregloDeArreglosInt[i] = arregloAscii;
+    }
+    return arregloDeArreglosInt;
+  }
   public static void main(String[]args) throws Exception 
   {
     File txt = new File("C:\\test.txt");
@@ -75,32 +86,27 @@ class anagrama {
 
 
 
-    String cadena = "roma";
+    // String cadena = "roma";
 
-    int ascii[] = stringToAscii(cadena);
+    // int ascii[] = stringToAscii(cadena);
 
-    System.out.println(Arrays.toString(ascii));
+    // System.out.println(Arrays.toString(ascii));
 
-    // char[] arra = cadena.toCharArray();
-    // int[] cadena_ascii = new int[1];
-    // int num = arra[0];
-    // cadena_ascii[0] = num;
-    // System.out.println(Arrays.toString(arra));
-    // char paso = 104;
-    // System.out.println(paso);
-    // int n1 = 0;
+    // System.out.println(Arrays.toString(arr));
+
+    int arregloDeAscii[][] = arregloStringToAscii(arr);
+    System.out.println(Arrays.deepToString(arregloDeAscii));
+
     // int vectorOrdenado[] = quicksort(vector1, 0, vector1.length - 1);
     // System.out.println(Arrays.toString(vectorOrdenado));
 
-    // for (int i = 0;  i < arra.length; i++) {
-    //   int parseo = arra[i];
-    //   cadena_ascii = Arrays.copyOf(cadena_ascii, n1 + 1);
-    //   cadena_ascii[n1] = parseo;
-    //   n1++;
-    // }
+
+
     // System.out.println("Arreglo desordenado"+ Arrays.toString(cadena_ascii));
     // aplico quicksort para ordenar el arreglo
     // int arregloOrdenado[] = quicksort(cadena_ascii, 0, cadena_ascii.length -1);
     // System.out.println("Arreglo desordenado"+ Arrays.toString(arregloOrdenado));
   } 
 }
+
+// [ [[9,3,17],[3,9,17]],[[17,3,9],[3,9,17]] ]
