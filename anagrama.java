@@ -64,6 +64,74 @@ class anagrama {
     }
     return arregloDeArreglosInt;
   }
+
+  public static String asciiToString (int[] arreglo) {
+    char arregloToChar[] = new char[arreglo.length];
+    for (int i = 0; i < arreglo.length; i++) {
+      char intToChar = (char) arreglo[i];
+      arregloToChar[i] = intToChar;
+    }
+    return String.valueOf(arregloToChar);
+
+  }
+  
+  public static int[][] arregloOrdenado (int[][] arreglo) {
+    int arregloDeAsciiOrdenado[][] = new int[arreglo.length][];
+    for (int i = 0; i < arreglo.length; i++) {
+      int arregloOrdenado[] = quicksort(arreglo[i], 0, arreglo[i].length - 1);
+      arregloDeAsciiOrdenado[i] = arregloOrdenado;
+    }
+    return arregloDeAsciiOrdenado;
+  }
+
+  public static int[] arregloMaximasApariciones (int[][] arregloOrdenado) {
+    int count = 0;
+    int indiceOrdenado = 0; // Declaramos un indice 
+    int count_max = 0;
+    int arregloMax[] = new int[1];
+    // Mientras el indice sea menor que el tamaño de arreglo ordenado se ejecuta
+    while (indiceOrdenado < arregloOrdenado.length) {
+
+      // Hacemos un for para iterar el arreglo buscando los anagramas
+      for (int i = 0; i < arregloOrdenado.length; i++) {
+        // Iniciamos el arreglo que se va a comparar
+        int arregloAComparar[] = arregloOrdenado[indiceOrdenado];
+        
+        // Si el arreglo a comparar es igual a otro que apareza aumentamos el contador
+        if (Arrays.equals(arregloAComparar, arregloOrdenado[i])) {
+          count++;
+        }
+      }
+      // Si ese contador es mayor al contador anterior ahora será el nuevo máximo
+      if (count > count_max) {
+        count_max = count;
+        // Guardamos ese arreglo para tener la referencia
+        arregloMax = arregloOrdenado[indiceOrdenado]; // sabemos cual se repite más
+      }
+
+      count = 0;
+      indiceOrdenado++;
+    }
+    return arregloMax;
+  }
+
+  public static String[] arregloAnagramas (int[][] arreglo,int[][] arregloOrdenado, int[] arregloComparador) {
+    // System.out.println(Arrays.deepToString(arreglo));
+    // System.out.println(Arrays.deepToString(arregloOrdenado));
+    String arregloDeAnagramas[] = new String[0];
+    int n = arregloDeAnagramas.length;
+    for (int i = 0; i < arreglo.length; i++) {
+      if (Arrays.equals(arregloComparador, arregloOrdenado[i])) {
+        arregloDeAnagramas = Arrays.copyOf(arregloDeAnagramas, n + 1);
+        arregloDeAnagramas[n] = asciiToString(arreglo[i]);
+        // System.out.println(Arrays.toString(arreglo[i]));
+        n++;
+      }
+    }
+
+    return arregloDeAnagramas;
+  }
+
   public static void main(String[]args) throws Exception 
   {
     File txt = new File("C:\\test.txt");
@@ -85,27 +153,13 @@ class anagrama {
     }
 
 
+    int arregloDeAscii[][] = arregloStringToAscii(arr); // Arreglo bidimensional 
+    
 
-    // String cadena = "roma";
+    // System.out.println(Arrays.toString(arregloMax));
+    String maxAnagramas[] = arregloAnagramas(arregloDeAscii, arregloOrdenado(arregloStringToAscii(arr)), arregloMaximasApariciones(arregloOrdenado(arregloStringToAscii(arr))));
+    System.out.println(Arrays.toString(maxAnagramas));
 
-    // int ascii[] = stringToAscii(cadena);
-
-    // System.out.println(Arrays.toString(ascii));
-
-    // System.out.println(Arrays.toString(arr));
-
-    int arregloDeAscii[][] = arregloStringToAscii(arr);
-    System.out.println(Arrays.deepToString(arregloDeAscii));
-
-    // int vectorOrdenado[] = quicksort(vector1, 0, vector1.length - 1);
-    // System.out.println(Arrays.toString(vectorOrdenado));
-
-
-
-    // System.out.println("Arreglo desordenado"+ Arrays.toString(cadena_ascii));
-    // aplico quicksort para ordenar el arreglo
-    // int arregloOrdenado[] = quicksort(cadena_ascii, 0, cadena_ascii.length -1);
-    // System.out.println("Arreglo desordenado"+ Arrays.toString(arregloOrdenado));
   } 
 }
 

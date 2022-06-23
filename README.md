@@ -1,5 +1,5 @@
 # TP integrador
-esolver los Proyectos de Programación 8.23 y 8.31 de las páginas 378 y 380 respectivamente (tengan en cuenta lo que figura como enunciado del ejercicio 8.32 es, en realidad, una ayuda aclaratoria para resolver el 8.31).
+Resolver los Proyectos de Programación 8.23 y 8.31 de las páginas 378 y 380 respectivamente (tengan en cuenta lo que figura como enunciado del ejercicio 8.32 es, en realidad, una ayuda aclaratoria para resolver el 8.31).
 
 - 8.23 Escriba un método que elimine todos los duplicados de una matriz A de N elementos. Devuelve el número de elementos que pertenecen a A. El método debe ejecutarse en un tiempo medio O(N log N) - Utilice una ordenación rápida como etapa de preprocesamiento - y no debe hacer uso de la API de Colecciones.
 
