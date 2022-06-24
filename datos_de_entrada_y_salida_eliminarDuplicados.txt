@@ -1,0 +1,22 @@
+ENTRADAS
+[6,3,5,8,5,15,10,6,3,7,8,6]
+[5,3,3,15,2,7,8,2,9,3]
+[10,15,15,23,15,10,12,33,22,33]
+[122,101,50,112,122,103,51]
+[15,15,15,33,2,42,12,33,15]
+
+SALIDAS PRODUCIDAS EN ORDEN DE ENTRADA
+no repetidos: [3,5,6,7,8,10,15]
+cantidad sin repetir: 7
+---
+no repetidos: [2, 3, 5, 7, 8, 9, 15]
+cantidad sin repetir: 7
+---
+no repetidos: [10, 12, 15, 22, 23]
+cantidad sin repetir: 5
+---
+no repetidos: [50, 51, 101, 103, 112]
+cantidad sin repetir: 5
+---
+no repetidos: [2, 12, 15, 33, 42]
+cantidad sin repetir: 5

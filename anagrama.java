@@ -1,4 +1,5 @@
 
+// Imports 
 import java.io.File;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -177,7 +178,7 @@ class anagrama {
 
     int arregloDeAscii[][] = arregloStringToAscii(arr); // Arreglo bidimensional de codigos ASCII
     
-
+    // Ejecutamos las funciones para lorar el retorno de los anagramas con mayor aparición
     String maxAnagramas[] = arregloAnagramas(arregloDeAscii, arregloOrdenado(arregloStringToAscii(arr)), arregloMaximasApariciones(arregloOrdenado(arregloStringToAscii(arr))));
     System.out.println("El arreglo de palabras es " + Arrays.toString(arr));
     System.out.println("El arreglo de anagramas con mayores apariciones es " + Arrays.toString(maxAnagramas));

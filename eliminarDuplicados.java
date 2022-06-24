@@ -42,7 +42,7 @@ class eliminarDuplicados {
   }
   public static void main (String[] args) {
     // Creamos arreglo y los inicializamos con numeros al azar
-    int arrayNums[] = {6,3,5,8,5,15,10,6,3,7,8,6};
+    int arrayNums[] = {15,15,15,33,2,42,12,33,15};
     // creamos un arreglo dandole el valor devuelto por el método de quicksort
     // como parámetros le pasamos el array creado, el 0 como inicio del arreglo y el ultimo indice 
     // pasandole el tamaño menos 1
@@ -74,8 +74,6 @@ class eliminarDuplicados {
         }
       }
     }
-    // System.out.println(Arrays.toString(arregloOrdenado));
-    // System.out.println(Arrays.toString(arregloNoRepetido));
 
     // Mostramos los resultados arrojados por los métodos
     System.out.println("Arreglo de numeros " + Arrays.toString(arrayNums));
