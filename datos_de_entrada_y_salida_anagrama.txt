@@ -1,0 +1,13 @@
+DATOS DE ENTRADA (tener en cuenta que en txt deben estar 1 bajo el otro)
+[frase, amarillo, caro, roca, fresa, azul, meta, rojo, mate, tema, roma, rosa, amor, mora, violeta, ramo]
+[meta, mesa, mate, arbol, tema, same]
+[ropa,onda,creo, nada,paro,dona,diana, proa,ando,dana,nado]
+[demo, velo, grado, rueda, magro, margo, mode, gramo]
+[caso,nado,caos,armo,asco,sopa,mora,cosa]
+
+DATOS DE SALIDA EN ORDEN A LA ENTRADA
+[roma, amor, mora, ramo]
+[meta, mate, tema]
+[onda, dona, ando, nado]
+[magro, margo, gramo]
+[caso, caos, asco, cosa]
