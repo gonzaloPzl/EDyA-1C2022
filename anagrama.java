@@ -132,25 +132,33 @@ class anagrama {
   }
 
   // Método para devolver el arreglo con los anagramas 
-  public static String[] arregloAnagramas (int[][] arreglo,int[][] arregloOrdenado, int[] arregloComparador) {
-    // recibe como primer parámetro el arreglo, como segundo el arreglo ordenado y como tercero el arreglo del anagrama
-    // con mayor cantidad de apariciones
-    // Incializamos con 0 espacios el arreglo que vamos a devolver
-    String arregloDeAnagramas[] = new String[0];
-    int n = arregloDeAnagramas.length; // inciamos el indice para amumentar el tamaño del arreglo de anagramas
-    for (int i = 0; i < arreglo.length; i++) {
+  public static String[] arregloAnagramas (String[] arreglo){
+    // Iniciamos el anagrama con 0 espacios para ir creciendolo
+    String[] arregloDeAnagramas = new String[0];
+    int n = arregloDeAnagramas.length; // El tamaño que va a ir creciendo el arreglo
+
+    /*  Con esta función transformamos el arreglo de strings con las palabras a un arreglo
+      de arreglos de numeros ascii que simbolizan las letras */
+    int[][] arregloDeArreglosInt = arregloStringToAscii(arreglo); 
+    
+    // Guardamos los resultados del ordenamiento de cada subarreglo dentro de esta variable
+    int arregloDeAsciiOrdenado[][] = arregloOrdenado(arregloStringToAscii(arreglo));
+
+    /*  Obtenemos el ASCII con mayor cantidad de apariciones ejecutando esta función y guardamos
+     el resultado dentro de esta variable */
+    int asciiMaximasApariciones[] = arregloMaximasApariciones(arregloDeAsciiOrdenado);
+
+    for (int i = 0; i < arregloDeArreglosInt.length; i++) {
       // Si el arreglo comparado es igual al arreglo ordenado se entre, ej -> arreglo comparado [15,25,100,114]
-      // arreglo comparador [15,25,100,114]
-      if (Arrays.equals(arregloComparador, arregloOrdenado[i])) {
+      if (Arrays.equals(asciiMaximasApariciones, arregloDeAsciiOrdenado[i])) {
         // Si son iguales primero aumentamos el tamaño 
         arregloDeAnagramas = Arrays.copyOf(arregloDeAnagramas, n + 1);
         // Y agregamos el arreglo que se encuentre en la misma posición pero dentro del arreglo original
-        arregloDeAnagramas[n] = asciiToString(arreglo[i]);
+        arregloDeAnagramas[n] = asciiToString(arregloDeArreglosInt[i]);
         // aumentamos el indice de tamaño
         n++;
       }
     }
-
     return arregloDeAnagramas;
   }
 
@@ -175,11 +183,9 @@ class anagrama {
       n++; // Se aumenta la n para en el siguiente bucle se aumente el tamaño del arreglo
     }
 
-
-    int arregloDeAscii[][] = arregloStringToAscii(arr); // Arreglo bidimensional de codigos ASCII
-    
-    // Ejecutamos las funciones para lorar el retorno de los anagramas con mayor aparición
-    String maxAnagramas[] = arregloAnagramas(arregloDeAscii, arregloOrdenado(arregloStringToAscii(arr)), arregloMaximasApariciones(arregloOrdenado(arregloStringToAscii(arr))));
+    /* Ejecutamos las funciones para lograr el retorno de los anagramas
+     con mayor aparición y lo guardamos en la variable */
+    String maxAnagramas[] = arregloAnagramas(arr);
     System.out.println("El arreglo de palabras es " + Arrays.toString(arr));
     System.out.println("El arreglo de anagramas con mayores apariciones es " + Arrays.toString(maxAnagramas));
 
