@@ -1,4 +1,3 @@
-
 // Imports 
 import java.io.File;
 import java.util.Arrays;
@@ -41,18 +40,18 @@ class anagrama {
 
   // Método transformar palabra a arreglo de ascii
   public static int[] stringToAscii(String palabra) { // Recibe la palabra
-    // Transforma la palabra en un arreglo de chars separados
+    // Transforma la palabra en un arreglo de chars separados: roma -> [r,o,m,a]
     char[] arregoChar = palabra.toCharArray();
     // Crea un arreglo de enteros con el tamaño del arreglo de char
     int[] arregloAscii = new int[arregoChar.length];
     // Hace un ciclo for que se ejecutara tantas veces como el largo del arreglo de char
     for (int i = 0; i < arregoChar.length; i++) {
       // Transformamos el char de la posición i a un entero ASCII
-      int charToInt = arregoChar[i];
+      int charToInt = arregoChar[i]; // r -> 114
       // Agregamos ese entero al arreglo de ASCII
       arregloAscii[i] = charToInt;
     }
-    return arregloAscii;
+    return arregloAscii; // [114, 111, 109, 97]
   }
   
   // Método para transformar los strings a arreglo de int
@@ -81,7 +80,6 @@ class anagrama {
 
     return String.valueOf(arregloToChar); // retornamos la transformación del array de chars a string
     // ej -> [r,o,m,a] = roma
-
   }
   
   // Método que ordena un arreglo bidimensional
